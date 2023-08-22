@@ -4,35 +4,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Grid Margin="0,0,0,40"
-          RowDefinitions="*, Auto, Auto, Auto"
+          RowDefinitions="*, Auto, Auto, Auto, Auto"
           RowSpacing="10">
 
 
-        <Image Background="Red"
+        <Image x:Name="logoImage"
+               Aspect="AspectFit"
+               Background="Red"
+               HeightRequest="200"
                HorizontalOptions="Center"
-               SemanticProperties.Description="Cute dot net bot waving hi to you!"
-               Source="windows_logo.png"
-               WidthRequest="200" />
+               Source="windows_logo.png" />
 
-        <Label Grid.Row="1"
+        <Image x:Name="smallLogoImage"
+               Grid.Row="1"
+               Background="Red"
+               HorizontalOptions="Center"
+               Source="button.png" />
+
+        <Label Grid.Row="2"
                FontSize="32"
                HorizontalOptions="Center"
                SemanticProperties.HeadingLevel="Level1"
                Text="Hello, World!" />
 
-        <Label Grid.Row="2"
+        <Label Grid.Row="3"
                FontSize="18"
                HorizontalOptions="Center"
                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                SemanticProperties.HeadingLevel="Level2"
                Text="Welcome to .NET Multi-platform App UI" />
 
-        <Button x:Name="CounterBtn"
-                Grid.Row="3"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Text="Click me" />
+        <FlexLayout Grid.Row="4"
+                    HorizontalOptions="Center"
+                    JustifyContent="SpaceEvenly">
+            <Button x:Name="StartButton"
+                    Clicked="StartButton_Clicked"
+                    HorizontalOptions="Center"
+                    Text="Start"
+                    WidthRequest="75" />
+            <Button x:Name="CenterButton"
+                    Clicked="CenterButton_Clicked"
+                    HorizontalOptions="Center"
+                    Text="Center"
+                    WidthRequest="75" />
+            <Button x:Name="EndButton"
+                    Clicked="EndButton_Clicked"
+                    HorizontalOptions="Center"
+                    Text="End"
+                    WidthRequest="75" />
+            <Button x:Name="FillButton"
+                    Clicked="FillButton_Clicked"
+                    HorizontalOptions="Center"
+                    Text="Fill"
+                    WidthRequest="75" />
+        </FlexLayout>
     </Grid>
 
 </ContentPage>

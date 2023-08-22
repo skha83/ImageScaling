@@ -9,16 +9,28 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void StartButton_Clicked(object sender, EventArgs e)
         {
-            count++;
+            logoImage.HorizontalOptions = LayoutOptions.Start;
+            smallLogoImage.HorizontalOptions = LayoutOptions.Start;
+        }
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+        private void CenterButton_Clicked(object sender, EventArgs e)
+        {
+            logoImage.HorizontalOptions = LayoutOptions.Center;
+            smallLogoImage.HorizontalOptions = LayoutOptions.Center;
+        }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        private void EndButton_Clicked(object sender, EventArgs e)
+        {
+            logoImage.HorizontalOptions = LayoutOptions.End;
+            smallLogoImage.HorizontalOptions = LayoutOptions.End;
+        }
+
+        private void FillButton_Clicked(object sender, EventArgs e)
+        {
+            logoImage.HorizontalOptions = LayoutOptions.Fill;
+            smallLogoImage.HorizontalOptions = LayoutOptions.Fill;
         }
     }
 
